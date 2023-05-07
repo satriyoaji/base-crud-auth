@@ -65,3 +65,8 @@ yarn migrate:up
 "email": "admin@gmail.com"
 "password": "password"
 ```
+
+### All Attachments (include API collection, etc) 
+```
+https://github.com/satriyoaji/base-crud-auth/tree/master/attachments
+```
