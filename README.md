@@ -42,7 +42,7 @@ yarn run v1.22.19
 $ ts-node-dev --respawn --transpile-only --exit-child src/app.ts
 [INFO] 23:10:01 ts-node-dev ver. 1.1.8 (using ts-node ver. 9.1.1, typescript ver. 4.5.2)
 Redis client connect successfully
-Server started on port: 8000
+Server started on port: 8080
 ```
 
 ## Create Migration
@@ -58,4 +58,10 @@ yarn migrate:gen && yarn migrate:up
 ## Push Schema Migration
 ```
 yarn migrate:up
+```
+
+### Admin Credential
+```
+"email": "admin@gmail.com"
+"password": "password"
 ```
