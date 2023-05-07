@@ -1,0 +1,580 @@
+{
+	"info": {
+		"_postman_id": "c76f11f0-e6b1-45df-93bd-75319a22149d",
+		"name": "Test DeallJobs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11901092",
+		"_collection_link": "https://interstellar-desert-322832.postman.co/workspace/Platon's-Projects~5f23110e-4956-4ccc-ba90-3fd14b6f4974/collection/11901092-c76f11f0-e6b1-45df-93bd-75319a22149d?action=share&creator=11901092&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Emp 1\",\r\n    \"email\": \"emp1@gmail.com\",\r\n    \"password\": \"password\",\r\n    \"password_confirm\": \"password\",\r\n    \"role\": \"Employee\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/auth/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"emp1@gmail.com\",\r\n    \"password\": \"password\",\r\n    \"password_confirm\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"emp1@gmail.com\",\r\n    \"password\": \"password\",\r\n    \"password_confirm\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/auth/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh token",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"password\",\r\n    \"password_confirm\": \"password\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/auth/refresh",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "LoggedIn User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_local}}/api/users/me",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"member 2\",\r\n    \"email\": \"member2@gmail.com\",\r\n    \"password\": \"password\",\r\n    \"password_confirm\": \"password\",\r\n    \"role\": \"Member\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/users/",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Lists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_local}}/api/users/:user_id",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"users",
+								":user_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": "7ba9f05f-91f6-4b5b-bbb0-77a9eeb27292"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"member 2\",\r\n    \"email\": \"member2@gmail.com\",\r\n    \"password\": \"password\",\r\n    \"role\": \"Member\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_local}}/api/users/:user_id",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"users",
+								":user_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": "1b78de8d-a3b1-4a24-bafc-5c234a2d0945"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"member 2\",\r\n    \"email\": \"member2@gmail.com\",\r\n    \"password\": \"password\",\r\n    \"role\": \"Member\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/users/:user_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"users",
+										":user_id"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": "1b78de8d-a3b1-4a24-bafc-5c234a2d0945"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "79"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4f-SRF2JTR1jAdQdGm9g0XiywIzBaE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 May 2023 02:55:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"user\": {\n            \"generatedMaps\": [],\n            \"raw\": [],\n            \"affected\": 1\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Soft Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_local}}/api/users/:user_id",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"users",
+								":user_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": "1b78de8d-a3b1-4a24-bafc-5c234a2d0945"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/users/:user_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"users",
+										":user_id"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": "1b78de8d-a3b1-4a24-bafc-5c234a2d0945"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "79"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4f-SRF2JTR1jAdQdGm9g0XiywIzBaE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 May 2023 02:59:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"user\": {\n            \"generatedMaps\": [],\n            \"raw\": [],\n            \"affected\": 1\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Restore Soft Deleted User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_local}}/api/users/restore/:user_id",
+							"host": [
+								"{{base_url_local}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"restore",
+								":user_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": "1b78de8d-a3b1-4a24-bafc-5c234a2d0945"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/users/:user_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"users",
+										":user_id"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": "1b78de8d-a3b1-4a24-bafc-5c234a2d0945"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "79"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4f-SRF2JTR1jAdQdGm9g0XiywIzBaE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 May 2023 02:59:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"user\": {\n            \"generatedMaps\": [],\n            \"raw\": [],\n            \"affected\": 1\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/health-checker",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"health-checker"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0ZWI5ZjVmZC1jZWMyLTRkYWYtODk2YS1jZGQ1NGNjYjc5ZWYiLCJpYXQiOjE2ODM0NzQ1MDEsImV4cCI6MTY4MzQ5NjEwMX0.CF9hbknljBhXyevGBzeuOqEuSP3iK05yMMXObElhS0-QTlfeIGRBZEOkwO6Ky4TEs3ws7v0DPL1nZpWJw2TZcigZF6NGvJgF0k8j8sFchQA75TnEnCXH-rGWhwV3oz0VtPCD5p_kvfIZF8glMoQpx-jjRCxNzp6mV5skmajNjlzjQYzjoNUOIIYJk-xgVYlVPiwabuWuF6usNavEyh21GXWZZ-X9m60A2XX071UqnWJUjNXFM6eHJEoINpZUnrdGA8To594gc__g12IcZsKdk9dt6fv2qUtbneWoflYXF6OslZ03ywsRdbIINoXWcFF0Hnk3YS_nyV5vRuE1J_mR7A",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url_local",
+			"value": "localhost:8080",
+			"type": "string"
+		}
+	]
+}
